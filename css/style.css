@@ -1985,38 +1985,36 @@ textarea.form-control {
 }
 
 /* --------------------------------------------------------------------------
-   Banda CTA con Textura Ambiental
+   Banda CTA Institucional (Limpia y Compacta)
    -------------------------------------------------------------------------- */
 .cta-band {
-  background: linear-gradient(135deg, rgba(7, 13, 24, 0.92) 0%, rgba(11, 21, 38, 0.88) 60%, rgba(23, 42, 74, 0.84) 100%),
-    url('../images/libros.jpg') center/cover no-repeat !important;
+  background: linear-gradient(135deg, #070D18 0%, #0B1526 60%, #101F38 100%) !important;
   color: #FFFFFF !important;
-  padding: 80px 0;
+  padding: 48px 0 !important;
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid rgba(197, 168, 105, 0.25);
-  border-bottom: 1px solid rgba(197, 168, 105, 0.25);
+  border-top: 1px solid rgba(197, 168, 105, 0.2);
+  border-bottom: 1px solid rgba(197, 168, 105, 0.2);
 }
 
 .cta-band--typewriter {
-  background: linear-gradient(135deg, rgba(7, 13, 24, 0.93) 0%, rgba(11, 21, 38, 0.89) 60%, rgba(35, 25, 18, 0.85) 100%),
-    url('../images/maquina-escribir.jpg') center 40%/cover no-repeat !important;
+  background: linear-gradient(135deg, #070D18 0%, #0B1526 60%, #101F38 100%) !important;
 }
 
 .cta-band h2 {
   color: #FFFFFF !important;
-  margin-bottom: 16px;
+  font-size: clamp(1.45rem, 2.1vw, 1.9rem);
+  margin-bottom: 10px;
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 12px rgba(7, 13, 24, 0.6);
 }
 
 .cta-band p {
   color: #CBD5E1 !important;
-  font-size: 1.1rem;
-  max-width: 640px;
-  margin: 0 auto 32px;
+  font-size: 1.02rem;
+  max-width: 620px;
+  margin: 0 auto 22px;
   position: relative;
   z-index: 2;
 }
@@ -2025,7 +2023,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
