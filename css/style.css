@@ -595,9 +595,9 @@ textarea {
    Hero Portada & Héroes Interiores con Fondos Temáticos
    -------------------------------------------------------------------------- */
 
-/* Hero Portada Principal (Dark Navy Hero con textura de máquina de escribir histórica) */
+/* Hero Portada Principal (Dark Navy Hero con textura y contraste máximo) */
 .hero-home {
-  background: linear-gradient(135deg, rgba(7, 13, 24, 0.92) 0%, rgba(11, 21, 38, 0.88) 55%, rgba(20, 36, 61, 0.82) 100%),
+  background: linear-gradient(135deg, rgba(7, 13, 24, 0.95) 0%, rgba(11, 21, 38, 0.92) 55%, rgba(16, 31, 56, 0.88) 100%),
     url('../images/maquina-escribir.jpg') center 40%/cover no-repeat !important;
   color: #FFFFFF !important;
   padding: 85px 0 95px !important;
@@ -612,7 +612,7 @@ textarea {
   right: 0;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(197, 168, 105, 0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(197, 168, 105, 0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -623,10 +623,33 @@ textarea {
   align-items: center;
 }
 
+.hero-home-title,
+.hero-home h1,
 .hero-home-content h1 {
   color: #FFFFFF !important;
   margin-bottom: 22px;
-  font-weight: 600;
+}
+
+.hero-brand-name {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #F0DC9D !important;
+  text-shadow: 0 3px 25px rgba(0, 0, 0, 0.9), 0 0 40px rgba(240, 220, 157, 0.4);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.hero-brand-tagline {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: clamp(1.2rem, 2.1vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.85);
 }
 
 .hero-home-lede {
