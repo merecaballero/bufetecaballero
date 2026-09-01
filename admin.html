@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panel de Gestión — Bufete Caballero · Alicante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=5.0">
+</head>
+<body style="background-color:var(--bg-alt);">
+
+<header class="admin-header">
+  <div class="wrap">
+    <div class="admin-brand">
+      <a href="index.html" class="brand">
+        <img src="images/logo-caballero-white.png" alt="Caballero Abogados" class="brand-logo-img">
+        <span class="brand__since" style="color:var(--c-gold-light);">Panel de Administración Jurídica</span>
+      </a>
+    </div>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <a href="/docs" target="_blank" class="btn btn-sm btn-ghost-light" style="color:#FFF; border-color:rgba(255,255,255,0.3); font-family:var(--font-mono); font-size:12px;">Swagger API</a>
+      <a href="index.html" class="btn btn-sm btn-gold">Volver a la Web</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap" style="padding-top:40px; padding-bottom:80px;">
+    
+    <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:16px;">
+      <div>
+        <span class="eyebrow dark">Sede Alicante · Gestión de Despacho</span>
+        <h1 style="font-size:2.2rem; margin-top:6px;">Control de Expedientes y Citas</h1>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:4px;">Gestión en tiempo real de consultas entrantes, expedientes y agenda de letrados.</p>
+      </div>
+      <div>
+        <button id="btnRefresh" class="btn btn-ghost" style="background:#FFFFFF;">↻ Actualizar Datos</button>
+      </div>
+    </div>
+
+    <!-- KPI Stats Cards -->
+    <div class="kpi-grid" id="adminStats">
+      <div class="kpi-card">
+        <div class="kpi-num">-</div>
+        <div class="kpi-label">Cargando métricas...</div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs-nav">
+      <button class="tab-btn active" id="tabInquiries">📬 Consultas y Expedientes Web</button>
+      <button class="tab-btn" id="tabConsultations">📅 Agenda de Citas y Consultas</button>
+    </div>
+
+    <!-- View 1: Inquiries -->
+    <div id="viewInquiries">
+      <div class="admin-controls">
+        <div class="admin-filters">
+          <select id="statusFilter">
+            <option value="">Todos los Estados</option>
+            <option value="nuevo">Solo Nuevos</option>
+            <option value="en_estudio">En Estudio</option>
+            <option value="contactado">Contactados</option>
+            <option value="cerrado">Cerrados</option>
+          </select>
+          <input type="text" id="searchInput" placeholder="Buscar por cliente, asunto o referencia...">
+        </div>
+      </div>
+
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Ref. Expediente</th>
+              <th>Cliente / Solicitante</th>
+              <th>Área Legal</th>
+              <th>Asunto</th>
+              <th>Urgencia</th>
+              <th>Estado Actual</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="inquiriesTableBody">
+            <tr>
+              <td colspan="7" class="text-center py-6">Cargando expedientes desde la base de datos...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- View 2: Consultations -->
+    <div id="viewConsultations" style="display:none;">
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>Código Cita</th>
+              <th>Cliente</th>
+              <th>Área de Práctica</th>
+              <th>Fecha y Horario</th>
+              <th>Letrado Asignado</th>
+              <th>Modalidad</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="consultationsTableBody">
+            <tr>
+              <td colspan="7" class="text-center py-6">Cargando agenda de citas...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Bufete Caballero — Panel Administrativo</span>
+    <span>FastAPI + SQLite v1.0.0</span>
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/main.js?v=4.0"></script>
+</body>
+</html>
